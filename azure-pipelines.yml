@@ -4,8 +4,8 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 pool:
-  name: default  # name of the pool to run this job in
-  
+  name: Default  # name of the pool to run this job in
+
 steps:
 - script:
     mkdir -p ./TestHarness
