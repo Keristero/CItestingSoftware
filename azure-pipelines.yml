@@ -12,20 +12,6 @@ pool:
   displayName: 'Create and set cwd to TestHarness'
 
 - script: |
-  git clone https://github.com/Keristero/CItestingSoftware
-  cd TestHarness
-displayName: 'Create and set cwd to TestHarness'
-
-# Publish Test Results
-# Publish Test Results to Azure Pipelines/TFS
-- task: PublishTestResults@2
-  condition: always()
-  inputs:
-    testResultsFormat: 'JUnit' # Options: JUnit, NUnit, VSTest, xUnit
-    testResultsFiles: '**/test-results*.xml' 
-    #searchFolder: '$(System.DefaultWorkingDirectory)' # Optional
-    #mergeTestResults: false # Optional
-    #testRunTitle: # Optional
-    #buildPlatform: # Optional
-    #buildConfiguration: # Optional
-    #publishRunAttachments: true # Optional
+    git clone https://github.com/Keristero/CItestingSoftware
+    cd TestHarness
+  displayName: 'Clone Software repository'
