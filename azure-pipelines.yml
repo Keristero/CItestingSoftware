@@ -3,22 +3,21 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
-pool:
-  name: Default  # name of the pool to run this job in
-
-steps:
-- script:
-    'mkdir -p ./TestHarness'
-  displayName: 'Create TestHarness'
-
-- script:
-    'cd TestHarness'
-  displayName: 'Set cwd to TestHarness'
-
-- script:
-    'git clone https://github.com/Keristero/CItestingSoftware'
-  displayName: 'Clone Software repository'
-
-- job: Test Harness
+jobs:
+- job: Get test harness
+  pool:
+    name: Default  # name of the pool to run this job in
   steps:
-    - template: test-harness-steps.yml
+  - script:
+      'mkdir -p ./TestHarness'
+    displayName: 'Create TestHarness'
+
+  - script:
+      'cd TestHarness'
+    displayName: 'Set cwd to TestHarness'
+
+  - script:
+      'git clone https://github.com/Keristero/CItestingSoftware'
+    displayName: 'Clone Software repository'
+
+  - template: test-harness-steps.yml
