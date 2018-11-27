@@ -19,4 +19,6 @@ steps:
     'git clone https://github.com/Keristero/CItestingSoftware'
   displayName: 'Clone Software repository'
 
-- template: test-harness-steps.yml # Template reference
+- job: Test Harness
+  steps:
+    - template: test-harness-steps.yml
