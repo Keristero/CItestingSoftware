@@ -8,11 +8,11 @@ pool:
 
 steps:
 - script:
-    mkdir -p ./TestHarness
-    cd TestHarness
+    'mkdir -p ./TestHarness'
+    'cd TestHarness'
   displayName: 'Create and set cwd to TestHarness'
 
 - script:
-    git clone https://github.com/Keristero/CItestingSoftware
-    cd TestHarness
+    'git clone https://github.com/Keristero/CItestingSoftware'
+    'cd TestHarness'
   displayName: 'Clone Software repository'
