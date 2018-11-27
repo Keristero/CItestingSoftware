@@ -6,12 +6,12 @@
 pool:
   name: default  # name of the pool to run this job in
 
-- script: |
+- script:
     mkdir -p ./TestHarness
     cd TestHarness
   displayName: 'Create and set cwd to TestHarness'
 
-- script: |
+- script:
     git clone https://github.com/Keristero/CItestingSoftware
     cd TestHarness
   displayName: 'Clone Software repository'
